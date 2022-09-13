@@ -28,8 +28,12 @@ print(' '.join((('1', '2', '3')))) # iterable ở đây là tuple ['1', '2', '3'
 print('BIMLab is my home'.replace('home', 'house'))
 print("Call it BIM, don't call it BIMer because it doesn't make sense".replace('BIM', 'BIMLab', 1))
 #Phương thức strip (<chuỗi>.strip([chars]))
-print('hahuyhahahah'.strip('h'))
-
-
-
-
+print('hahuyahhh'.strip('h')) #đầu-cuối
+#Phương thức rstrip-lstrip (<chuỗi>.rstrip-lstrip)
+print('hhhhhhhhahuyyyy'.lstrip('h'))
+#Phương thức removeprefix (<chuỗi>.removeprefix([prefix]))
+    #khắc phục cho pt lstrip
+print('hhhhhhhhahuy'.removeprefix('hhhhhhh'))
+#Phương thức removesuffix (<chuỗi>.removesuffix([suffix]))
+    #khắc phục cho pt rstrip
+print('hahuyyyy'.removesuffix('yyy'))
