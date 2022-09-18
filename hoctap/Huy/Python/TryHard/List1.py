@@ -49,5 +49,10 @@ Tìm các cách khởi tạo List hợp lệ dưới đấy
  --[0] * 3
 '''
 # Với chuỗi s dưới đây lấy mật mã, biết mật mã nằm giữa && và %%
-s = 'aaaaaaaAAAAAaaa//123123//000000//&&TTT%%abcxyznontqfadf'
-print(s.split('&&')[-1].split('%%')[0])
+s = 'aaaaaaaAAAAAa&&&&TTT%%%aa//12312&ABC%%3//000000//&&TTT%%abcxyznontqfadf'
+#NHỚ QUAY LẠI LÀM
+'''
+Cái này em chạy O(n) là giải ra. Cho vòng while điều kiện len(str) > 4,
+mỗi vòng lặp split chuỗi đầu tiên hợp điều kiện, 
+lưu vào mảng sau đó tạo chuỗi mới bỏ str đầu ra
+'''

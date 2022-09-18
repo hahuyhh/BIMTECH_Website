@@ -1,95 +1,57 @@
-#PART 2
+#Các phương thức tiện ích
 
-a = [1,2,3,4,1,6,7,8,9,10]
-
-#Phương thức count (đếm số lần xuất hiện của phần tử)
-print(a.count(1))
-
-#Phương thức index (tìm ra vị trí của phần tử) 
-print(a.index(3)) 
-
-m = '-------------------' 
-print(m)
-
-#Phương thức copy (hàm copy, tạo ra 1 bản sao)
-b = a.copy()
-b[0] = 'Hahuy'
-print(a)
-print(b)
-
-#Phương thức clear
-c = a.clear()
-print(a)
-print(c)
-
-m = '-------------------' 
-print(m)
+#Phương thức count (<List>.count(sub, [start, [end]]))
+print([[1, 5, 1, 6, 2, 7].count(5)])
+#Phương thức index (<List>.index(sub[, start[, end]]))
+print([[1, 5, 1, 6, 2, 7].index(6)])
+#Phương thức copy(<List>.copy())
+a = [1, 5, 1, 6, 2, 7]
+b=a.copy()
+b[1]=1
+print(b,a)
+#Phương thức clear(<List>.clear())
+print([1, 5, 1, 6, 2, 7].clear())
 
 #Các phương thức cập nhật
-#Phương thức append
-x = [1,3,5]
-x.append(7)
-print(x)
-
-'''Khi ta append một list vào chính nó, thì trên thực tế,
-nó sẽ tạo ra một vòng lặp vô tận.
-Trong ví dụ trên, khi ta append a vào list a,
-thì nó sẽ truy xuất giá trị của a để có thể append.
-Nhưng vì giá trị của a đang được thay đổi, nên nó sẽ lại append trước khi truy xuất.
-Điều này sẽ lặp lại mãi mãi vì giá trị a sẽ luôn luôn được thay đổi.
-Kết quả [1, 2, [...]] chính là đại diện cho sự lặp vô tận đó.'''
-
-#Phương thức extend (Thêm từng phần tử một của iterable vào cuối List.)
-y = [1, 2, 3]
-y.extend([[4,5],6,7])
-print(y) #xem sự khác biệt giữa append và extend
-
-#Phương thức insert (<list>.insert(i,x)) (Thêm phần x vào vị trí i ở trong List.)
-z = [1, 2, 3]
-z.insert(0,7)
-print(z)
-
-m = '-------------------' 
-print(m)
-
-#Phương thức pop (Bỏ đi phần tử thứ i trong List và trả về giá trị đó)
-#<List>.pop([i])
-t = [1, 2, 3]
-print(t)
-t0 = t.pop(1)
-print(t)
-print(t0)
-
-#Phương thức remove (Bỏ đi phần tử đầu tiên trong List có giá trị x)
-#<List>.remove(x)
-u = [0, 1, 2, 1, 3]
-#print(u)
-u.remove(1)
-print(u)
+#Phương thức append(<List>.append(x))
+z=['B','I','M','L','a']
+print(z.append('b'),z)
+x = [1,2]
+print(x.append(3),x)
+#Phương thức extend (<List>.extend(iterable))
+print(x.extend('b'),x)
+print(x.extend([[5,6],'c']),x)
+#Phương thức insert (<List>.insert (i, x))
+print(x.insert(5,6),x) # thêm phần tử 8 vào trong List kteam ở vị trí 5
+y=[1, 2, 3]
+print(y.insert(-1, 4),y) # thêm vào vị trí (-1 – 1) là -2
+#Phương thức pop (<List>.pop([i]))
+t=[1,2, 3, 5, 6]
+print(t.pop(-3),t)
+#Phương thức remove (<List>.remove(x))
+u=[1, 5, 6, 2, 1, 7]
+print(u.remove(5),u)
 
 #Các phương thức xử lí
-#Phương thức reverse (Đảo ngược các phần tử ở trong List)
-#<List>.reverse()
-v = [1,4,6,1,7]
-v.reverse()
-print(v)
 
-#Phương thức sort (Sắp xếp các phần tử từ bé đến lớn bằng cách so sánh trực tiếp.)
-#<List>.sort(key=None, reverse=False)
-m = [1,4,6,1,7]
-m.sort()
-print(m)
+#Phương thức reverse(<List>.reverse())
+print(u.reverse(),u)
+#Phương thức sort (<List>.sort(key=None, reverse=False))
+print(u.sort(reverse=False),u)
+'''
+False nhỏ > lớn
+True lớn > nhỏ
+# không đưa giá trị cho reverse thì mặc định là False
+'''
+lst = ['a', 1, 'b', 2, 2, 'b']
+print(lst.sort(key=str),lst)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#Củng cố
+'''
+1 Chuyện gì xảy ra khi ta dùng phương thức pop lên một List rỗng
+--> Kết quả trả ra là rỗng
+2 Ta có thể sắp xếp được List dưới đây bằng phương thức sort hay không?
+--> được 
+'''
+ex = [[1, 2], ['abc', 'def']]
+print(ex.sort(key=len),ex)
